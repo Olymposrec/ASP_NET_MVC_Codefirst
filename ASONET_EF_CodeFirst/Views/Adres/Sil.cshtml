@@ -1,0 +1,58 @@
+﻿@model ASONET_EF_CodeFirst.Models.Adresler
+@{
+    ViewBag.Title = "Sil";
+}
+
+<h2>Kişi Sil</h2>
+<hr />
+<p>
+    Bu Adres kaydı silinsin mi ?
+</p>
+<hr />
+
+@*@Html.HiddenFor(x=>x.ID)*@
+
+@*<div class="input-group">
+        <span class="input-group-addon" id="txt_ad">Ad </span>
+        @Html.DisplayFor(x => x.Ad, new { @class = "form-control", aria_describedby = "txt_ad" })
+
+    </div>
+    <br />
+    <div class="input-group">
+        <span class="input-group-addon" id="txt_soyad">Soyad </span>
+        @Html.DisplayFor(x => x.Soyad, new { @class = "form-control",  aria_describedby = "txt_soyad" })
+
+    </div>
+    <br />
+    <div class="input-group">
+        <span class="input-group-addon" id="txt_yas">Yaş </span>
+        @Html.DisplayFor(x => x.Yas, new { @class = "form-control",  aria_describedby = "txt_yas" })
+
+    </div>
+    <br />
+    <div class="input-group">
+        <span class="input-group-addon" id="txt_mail">Mail </span>
+        @Html.DisplayFor(x => x.Mail, new { @class = "form-control",  aria_describedby = "txt_mail" })
+
+    </div>*@
+<table>
+    <tr>
+        <td>Kişi:</td>
+        <td>@(Model.kisi.Ad+" "+Model.kisi.Soyad) </td>
+    </tr>
+    <tr>
+        <td>ADRES:</td>
+        <td>@Model.AdresTanim</td>
+    </tr>
+</table>
+<br>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.ID)
+    <div class="input-group">
+        <input type="submit" value="Sil" class="btn btn-success" />
+    </div>
+    <br>
+}
+
+

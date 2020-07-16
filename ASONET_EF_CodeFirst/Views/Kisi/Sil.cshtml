@@ -1,0 +1,65 @@
+﻿@model ASONET_EF_CodeFirst.Models.Kisiler
+@{
+    ViewBag.Title = "Sil";
+}
+
+<h2>Kişi Sil</h2>
+<hr />
+<p>
+    Bu kişinin kaydı silinsin mi ?
+</p>
+<hr />
+
+@*@Html.HiddenFor(x=>x.ID)*@
+
+@*<div class="input-group">
+        <span class="input-group-addon" id="txt_ad">Ad </span>
+        @Html.DisplayFor(x => x.Ad, new { @class = "form-control", aria_describedby = "txt_ad" })
+
+    </div>
+    <br />
+    <div class="input-group">
+        <span class="input-group-addon" id="txt_soyad">Soyad </span>
+        @Html.DisplayFor(x => x.Soyad, new { @class = "form-control",  aria_describedby = "txt_soyad" })
+
+    </div>
+    <br />
+    <div class="input-group">
+        <span class="input-group-addon" id="txt_yas">Yaş </span>
+        @Html.DisplayFor(x => x.Yas, new { @class = "form-control",  aria_describedby = "txt_yas" })
+
+    </div>
+    <br />
+    <div class="input-group">
+        <span class="input-group-addon" id="txt_mail">Mail </span>
+        @Html.DisplayFor(x => x.Mail, new { @class = "form-control",  aria_describedby = "txt_mail" })
+
+    </div>*@
+<table>
+    <tr>
+        <td>AD:</td>
+        <td>@Model.Ad</td>
+    </tr>
+    <tr>
+        <td>SOYAD:</td>
+        <td>@Model.Soyad</td>
+    </tr>
+    <tr>
+        <td>YAŞ:</td>
+        <td>@Model.Yas</td>
+    </tr>
+    <tr>
+        <td>MAIL:</td>
+        <td>@Model.Mail</td>
+    </tr>
+</table>
+<br>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.ID)
+    <div class="input-group">
+        <input type="submit" value="Sil" class="btn btn-success" />
+    </div>
+}
+<br>
+

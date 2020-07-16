@@ -1,0 +1,57 @@
+﻿@model ASONET_EF_CodeFirst.Models.Kisiler
+@{
+    ViewBag.Title = "Yeni";
+}
+
+<h2>Yeni Kişi</h2>
+<hr />
+<div>
+    @Html.ActionLink("Homepage", "Homepage", "Home", null, new { @class = "btn btn-primary" })
+    <br /><br />
+
+
+</div>
+@using (Html.BeginForm())
+{ 
+
+<div class="input-group">
+    <span class="input-group-addon" id="txt_ad">Ad </span>
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control", placeholder = "Adı", aria_describedby = "txt_ad" })
+
+</div>
+<br />
+<div class="input-group">
+    <span class="input-group-addon" id="txt_soyad">Soyad </span>
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control", placeholder = "Soyadı", aria_describedby = "txt_soyad" })
+
+</div>
+<br />
+<div class="input-group">
+    <span class="input-group-addon" id="txt_yas">Yaş </span>
+    @Html.TextBoxFor(x => x.Yas, new { @class = "form-control", placeholder = "Yaşı", aria_describedby = "txt_yas" })
+
+</div>
+<br />
+<div class="input-group">
+    <span class="input-group-addon" id="txt_mail">Mail </span>
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", placeholder = "Maili", aria_describedby = "txt_mail" })
+
+</div>
+
+<br>
+<div class="input-group">
+    <input type="submit" value="Kaydet" class="btn btn-success" />
+</div>
+<br>
+<div class="input-group small">
+
+    @if (ViewBag.Result != null)
+    {
+    <div class="alert alert-@ViewBag.Status small" role="alert">
+        @ViewBag.Result
+    </div>
+    }
+
+
+</div>
+}
